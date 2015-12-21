@@ -1,0 +1,20 @@
+<section>
+  <!--  Tab Navigation  -->
+  <ul class="nav nav-pills">
+    <li ng-class="{ active:tab.isSet(1) }">
+      <a href="" ng-click="tab.setTab(1)"><font color = "black">Description</font></a>
+    </li>
+    <li ng-class="{ active:tab.isSet(2) }">
+      <a href="" ng-click="tab.setTab(2)"><font color = "black">Specs</font></a>
+    </li>
+    <li ng-class="{ active:tab.isSet(3) }">
+      <a href="" ng-click="tab.setTab(3)"><font color = "black">Reviews</font></a>
+    </li>
+  </ul>
+  <!--  Description Tab's Content  -->
+  <descriptions ng-show="tab.isSet(1)"></descriptions>
+  <!--  Spec Tab's Content  -->
+  <specs ng-show="tab.isSet(2)"></specs>
+  <!--  Review Tab's Content  -->
+  <reviews ng-show="tab.isSet(3)">hi</reviews>
+</section>
