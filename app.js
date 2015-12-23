@@ -25,8 +25,20 @@
       product.reviews.push(this.review);
       this.review = {};
     };
-
   });
+  
+  app.controller("PanelController", function() {
+	  this.tab = 1;
+	  
+	  this.selectTab = function(setTab) {
+		  this.tab = setTab;
+	  };
+	  
+	  this.isSelected = function(checkTab) {
+		  return this.tab === checkTab;
+	  };
+  });
+ 
 
   var gems = [{
     name: 'Topaz',
@@ -37,9 +49,9 @@
     color: '#CCC',
     faces: 14,
     images: [
-      "http://localhost/gemstore/images/azurite.jpeg",
-      "http://localhost/gemstore/images/azurite1.jpeg",
-      "http://localhost/gemstore/images/azurite2.jpeg"
+      "file:///C:/python34/code/gemstore/images/azurite.jpeg",
+      "file:///C:/python34/code/gemstore/images/azurite1.jpeg",
+      "file:///C:/python34/code/gemstore/images/azurite2.jpeg"
     ],
     reviews: [{
       stars: 5,
@@ -61,9 +73,9 @@
     color: '#EEE',
     faces: 12,
     images: [
-      "http://localhost/gemstore/images/opal.jpeg",
-      "http://localhost/gemstore/images/opal1.jpeg",
-      "http://localhost/gemstore/images/opal2.jpeg"
+      "file:///C:/python34/code/gemstore/images/opal.jpeg",
+      "file:///C:/python34/code/gemstore/images/opal1.jpeg",
+      "file:///C:/python34/code/gemstore/images/opal2.jpeg"
     ],
     reviews: [{
       stars: 3,
@@ -85,9 +97,9 @@
     color: '#000',
     faces: 6,
    images: [
-      "http://localhost/gemstore/images/ruby.jpeg",
-      "http://localhost/gemstore/images/ruby1.jpeg",
-      "http://localhost/gemstore/images/ruby2.jpeg"
+      "file:///C:/python34/code/gemstore/images/ruby.jpeg",
+      "file:///C:/python34/code/gemstore/images/ruby1.jpeg",
+      "file:///C:/python34/code/gemstore/images/ruby2.jpeg"
     ],
      reviews: [{
       stars: 1,
