@@ -1,3 +1,4 @@
+// Combined HTML
 <!DOCTYPE html>
 <html ng-app="gemStore">
 
@@ -94,12 +95,13 @@
                                 </select>
                             </fieldset>
                             <fieldset class="form-group">
+                                <!-- ng-model binds the application data so it will show up as a preview as the review is being typed (djb 23 Dec 15) -->
                                 <textarea ng-model="reviews.review.body" class="form-control"
                                 placeholder="Write a short review of the product..." title="Review"></textarea>
                             </fieldset>
                             <fieldset class="form-group">
                                <input ng-model="reviews.review.author" type="email"
-                                class="form-control" placeholder="jimmyDean@sausage.com"
+                                class="form-control" placeholder="SuperDave@awesome.com"
                                 title="Email" />
                             </fieldset>
                             <fieldset class="form-group">
