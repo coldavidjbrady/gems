@@ -48,7 +48,7 @@
     color: '#CCC',
     faces: 14,
     images: [
-      "file:///C:/python34/code/gemstore/images/azurite.jpeg",
+      "http://localhost/gemstore/images/azurite.jpeg",
       "file:///C:/python34/code/gemstore/images/azurite1.jpeg",
       "file:///C:/python34/code/gemstore/images/azurite2.jpeg"
     ],
@@ -72,7 +72,7 @@
     color: '#EEE',
     faces: 12,
     images: [
-      "file:///C:/python34/code/gemstore/images/opal.jpeg",
+      "http://localhost/gemstore/images/opal.jpeg",
       "file:///C:/python34/code/gemstore/images/opal1.jpeg",
       "file:///C:/python34/code/gemstore/images/opal2.jpeg"
     ],
@@ -96,7 +96,7 @@
     color: 'Red',
     faces: 6,
    images: [
-      "file:///C:/python34/code/gemstore/images/ruby.jpeg",
+      "http://localhost/gemstore/images/ruby.jpeg",
       "file:///C:/python34/code/gemstore/images/ruby1.jpeg",
       "file:///C:/python34/code/gemstore/images/ruby2.jpeg"
     ],
