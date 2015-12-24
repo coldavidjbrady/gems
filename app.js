@@ -1,5 +1,3 @@
-// Code goes here
-/*global $:false,alert:false*/
 (function() {
   var app = angular.module('gemStore', ['store-directives']);
 
@@ -82,7 +80,7 @@
     shine: 70,
     price: 1100,
     rarity: 2,
-    color: '#000',
+    color: 'Red',
     faces: 6,
    images: [
       "http://localhost/gemstore/images/ruby.jpeg",
