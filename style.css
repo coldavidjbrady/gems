@@ -83,3 +83,11 @@ img{
 .btn-primary:hover {
   background: #4d00ac;
 }
+
+.ng-valid.ng-dirty {
+    border-color: #78FA89;
+}
+
+.ng-invalid.ng-dirty {
+ border-color: #FA787E;
+}
