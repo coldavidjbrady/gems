@@ -49,8 +49,8 @@
     faces: 14,
     images: [
       "http://localhost/gemstore/images/azurite.jpeg",
-      "file:///C:/python34/code/gemstore/images/azurite1.jpeg",
-      "file:///C:/python34/code/gemstore/images/azurite2.jpeg"
+      "http://localhost/gemstore/images/azurite1.jpeg",
+      "http://localhost/gemstore/images/azurite2.jpeg"
     ],
     reviews: [{
       stars: 5,
@@ -73,8 +73,8 @@
     faces: 12,
     images: [
       "http://localhost/gemstore/images/opal.jpeg",
-      "file:///C:/python34/code/gemstore/images/opal1.jpeg",
-      "file:///C:/python34/code/gemstore/images/opal2.jpeg"
+      "http://localhost/gemstore/images/opal1.jpeg",
+      "http://localhost/gemstore/images/opal2.jpeg"
     ],
     reviews: [{
       stars: 3,
@@ -97,8 +97,8 @@
     faces: 6,
    images: [
       "http://localhost/gemstore/images/ruby.jpeg",
-      "file:///C:/python34/code/gemstore/images/ruby1.jpeg",
-      "file:///C:/python34/code/gemstore/images/ruby2.jpeg"
+      "http://localhost/gemstore/images/ruby1.jpeg",
+      "http://localhost/gemstore/images/ruby2.jpeg"
     ],
      reviews: [{
       stars: 1,
