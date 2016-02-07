@@ -5,18 +5,29 @@
     <li ng-repeat="review in product.reviews">
 
       <blockquote>
-        <strong>{{review.stars}} Stars</strong>
+        <strong>{{review.stars}}
+            <ng-pluralize   count="review.stars"
+                            when="{'one': 'Star',
+                            'other': 'Stars'}">
+
+            </ng-pluralize>
+        </strong>
         {{review.body}}
         <cite class="clearfix">—{{review.author}}  on {{review.createdOn | date}}</cite>
       </blockquote>
     </li>
   </ul>
-
   <!--  Review Form -->
   <form name="reviewForm" role="form" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
     <!--  Live Preview -->
+
     <blockquote ng-show="reviewCtrl.review.stars">
-      <strong>{{reviewCtrl.review.stars}} Stars</strong>
+      <strong>{{reviewCtrl.review.stars}}
+          <ng-pluralize   count="reviewCtrl.review.stars"
+                          when="{'one': 'Star',
+                                 'other': 'Stars'}">
+          </ng-pluralize>
+      </strong>
       {{reviewCtrl.review.body}}
       <cite class="clearfix">—{{reviewCtrl.review.author}}</cite>
     </blockquote>
