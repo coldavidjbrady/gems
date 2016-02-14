@@ -10,6 +10,7 @@
     };
   });
 
+/*
   app.controller('StoreController', [ '$http', function($http){
     var store = this;
     store.products = [];
@@ -18,9 +19,44 @@
        store.products = data;
     });
   }]);
+*/
+/*
+    app.config(['$httpProvider', function($httpProvider) {
+        login = "dbrady";
+        pass = "WestPoint87";
+        $httpProvider.defaults.headers.common["Authorization"] = "Basic  " + login + ':' + pass + '"';
+        $httpProvider.defaults.useXDomain = true;
+        $httpProvider.defaults.withCredentials = false;
+        delete $httpProvider.defaults.headers.common["X-Requested-With"];
+        $httpProvider.defaults.headers.common["Accept"] = "application/json";
+        $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
+    }]);
+*/
 
+    app.controller('StoreController', [ '$http', function($http){
 
-  
+        var store = this;
+        store.products = [];
+
+        $http.get('http://127.0.0.1:8000/api/products/').success(function(data) {
+        store.products = data;
+        console.log(data);
+        });
+    }]);
+
+    app.controller("ReviewController", [ '$http', function($http) {
+
+    this.review = {};
+
+    this.addReview = function(product) {
+        this.review.createdOn = "2016-02-06"
+        this.review.product = product.id;
+        console.log(this.review);
+        $http.post('http://127.0.0.1:8000/api/reviews/', this.review).success(function (data) {
+            this.review = {};
+        });
+    }}]);
+/*
   app.controller("ReviewController", function(){
 
     this.review = {};
@@ -31,7 +67,7 @@
       this.review = {};
     };
   });
-  
+  */
   app.controller("PanelController", function() {
 	  this.tab = 1;
 	  
@@ -43,6 +79,5 @@
 		  return this.tab === checkTab;
 	  };
   });
-
 
 })();
