@@ -15,15 +15,13 @@
     <!--  Store Header  -->
     <header>
       <h1 class="text-center">Gems and Reviews</h1>
-      <h2 class="text-center">Angular Tutorial</h2>
+      <h4 class="text-center">Angular Frontend and Django Backend</h4>
     </header>
     
     <!--  Products Container  -->
     <div class="list-group">
-      <!--  Product Container  -->
       <div class="list-group-item" ng-repeat="product in store.products | orderBy:'-price'">
         
-        <!-- $index Practice:  -->
         <h3>Gem #{{$index + 1}}: {{product.name | uppercase}} -     <em class="pull-right">{{product.price | currency}}</em>
         </h3>
         

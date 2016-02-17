@@ -50,6 +50,7 @@
 
     this.addReview = function(product) {
 
+        product.reviews.push(this.review);
         // create array of values returned by `.toLocaleDateString()`,
         var d = new Date().toLocaleDateString().split("/");
         var y = d.splice(-1)[0];
@@ -59,9 +60,13 @@
         this.review.createdOn = date;
         this.review.product = product.id;
         console.log(this.review);
+
         $http.post('http://127.0.0.1:8000/api/reviews/', this.review).success(function (data) {
             this.review = {};
-        });
+        })
+            .error(function (data) {
+                alert("Review did not post!")
+            })
     }}]);
 /*
   app.controller("ReviewController", function(){

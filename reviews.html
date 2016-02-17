@@ -5,8 +5,6 @@
     <li ng-repeat="review in product.reviews">
 
       <blockquote>
-        <h5>{{review}}</h5>
-      <!--
         <strong>{{review.stars}}
             <ng-pluralize count="review.stars"
                           when="{'one': 'Star',
@@ -16,7 +14,7 @@
         {{review.body}}
         <cite class="clearfix">—{{review.author}}  on {{review.createdOn | date}}</cite>
       </blockquote>
-     -->
+
     </li>
   </ul>
   <!--  Review Form -->
