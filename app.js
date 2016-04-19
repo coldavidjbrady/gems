@@ -106,8 +106,8 @@
       author: "turtleguyy@zdn.me",
       createdOn: 1397490980837
     }, {
-      stars: 1,
-      body: "BBW: High Shine != High Quality.",
+      stars: 4,
+      body: "Love rubies...color of the glorious field artillery.",
       author: "LouisW407@gmail.com",
       createdOn: 1397490980837
     }, {
