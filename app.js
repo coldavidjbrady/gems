@@ -107,7 +107,7 @@
       createdOn: 1397490980837
     }, {
       stars: 4,
-      body: "Love rubies...color of the glorious field artillery.",
+      body: "rubies are red...and so is the color of the glorious field artillery.",
       author: "LouisW407@gmail.com",
       createdOn: 1397490980837
     }, {
