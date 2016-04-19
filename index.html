@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Gem Store</title>
+    <link data-require="bootstrap-css" data-semver="3.1.1" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+     <link rel="stylesheet" href="style.css" />   
+    <!--<link rel="stylesheet" href="//localhost/gemstore/style.css" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script src="products.js"></script>
+  </head> 
+
+  <body ng-controller="StoreController as store">
+    <!--  Store Header  -->
+    <header>
+      <h1 class="text-center">Gems and Reviews</h1>
+      <h2 class="text-center">Angular Tutorial</h2>
+    </header>
+    
+    <!--  Products Container  -->
+    <div class="list-group">
+      <!--  Product Container  -->
+      <div class="list-group-item" ng-repeat="product in store.products | orderBy:'-price'">
+        
+        <!-- $index Practice:  -->
+        <h3>Gem #{{$index + 1}}: {{product.name | uppercase}} -     <em class="pull-right">{{product.price | currency}}</em>
+        </h3>
+        
+        <!-- Image Gallery  -->
+        <div ng-show="product.images.length" ng-controller="GalleryController as gallery">
+          <div class="img-wrap">
+            <img ng-src="{{product.images[gallery.imageIndex]}}" class="img-thumbnail center-block" />
+          </div>
+               <ul class="img-thumbnails clearfix">
+                  <li class="small-image pull-left thumbnail" ng-repeat="image in product.images" ng-click="gallery.currentImageChange($index)">
+                    <img ng-src="{{image}}" />
+                  </li>
+              </ul>
+          </div>
+        
+        <!-- Product Tabs  -->
+        <product-tabs></product-tabs>
+        
+      </div>
+    </div>
+  </body>
+
+</html>
+
+
+
