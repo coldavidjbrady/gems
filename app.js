@@ -2,7 +2,8 @@
 (function() {
   var app = angular.module('gemStore', ['store-directives']);
 
-  app.controller('GalleryController', function() {
+
+    app.controller('GalleryController', function() {
     this.imageIndex = 0;
     this.setCurrent = function(imageNumber) {
       console.log(imageNumber);
@@ -37,14 +38,26 @@
 
         var store = this;
         store.products = [];
+        store.mytoken = "";
 
-        $http.get('http://127.0.0.1:8000/api/products/').success(function(data) {
-        store.products = data;
-        console.log(data);
-        });
+        $http.post('http://127.0.0.1:7177/api-token-auth/', {
+            "username" : "dbrady",
+            "password" : "WestPoint87"
+        }).success(function(data) {
+            store.mytoken = data["token"];
+            $http.defaults.headers.common.Authorization = "JWT ".concat(store.mytoken);
+            console.log("JWT " + store.mytoken);
+            // Need to wrapper this call inside the success function due to the asynchrous nature of javascript...the get function
+            // was getting executed prior to getting and setting the JWT which royally screwed things up (djb 22 Jun 16).
+            $http.get('http://127.0.0.1:7177/api/products/').success(function(data) {
+            store.products = data;
+            console.log("Get - JWT " + store.mytoken);
+            console.log(data);
+            });
+            });
     }]);
 
-    app.controller("ReviewController", [ '$http', function($http) {
+    app.controller("ReviewController", ['$http', function($http) {
 
     this.review = {};
 
@@ -61,25 +74,19 @@
         this.review.product = product.id;
         console.log(this.review);
 
-        $http.post('http://127.0.0.1:8000/api/reviews/', this.review).success(function (data) {
+        $http.post('http://127.0.0.1:7177/api/reviews/', this.review).success(function (data) {
+            console.log(data)
             this.review = {};
         })
-            .error(function (data) {
-                alert("Review did not post!")
-            })
+        .error(function(data, status) {
+            console.error('Error trying to submit review', status, data);
+        })
+        .finally(function() {
+            console.log("Successfully submitted review!");
+        });
+        this.review = {}; // The .success function is executed, but it doesn't appear to be in scope (i.e. setting this.review to {} doesn't do anything)
     }}]);
-/*
-  app.controller("ReviewController", function(){
 
-    this.review = {};
-  
-    this.addReview = function(product){
-      this.review.createdOn = Date.now();
-      product.reviews.push(this.review);
-      this.review = {};
-    };
-  });
-  */
   app.controller("PanelController", function() {
 	  this.tab = 1;
 	  
