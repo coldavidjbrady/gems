@@ -10,8 +10,7 @@
             };
         });
 
-
-        app.controller('StoreController', [ '$http', function($http){
+        app.controller('StoreController', [ '$http', function($http) {
 
             let store = this;
             store.products = [];
